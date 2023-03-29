@@ -8,9 +8,6 @@ public class MenTurtle : MonoBehaviour
     public delegate void VoidFuncInt(int turn);
     public delegate void VoidFunc4Param(Vector3 pos, Vector3 lastPos, int turn, int invTurn);
    
-
-    public class menTurtle
-    {
         Vector3 pos = Vector3.zero;
         Vector3 lastPos = Vector3.zero;
 
@@ -39,7 +36,7 @@ public class MenTurtle : MonoBehaviour
         public VoidFunc4Param backwardDelegate;
         public VoidFuncInt turnDelegate;
 
-        public menTurtle(float clampX = 3, float clampY = 3)
+        public MenTurtle(float clampX = 3, float clampY = 3)
         {
             forwardDelegate = (x, y, z, w) => { };
             backwardDelegate = (x, y, z, w) => { };
@@ -114,16 +111,10 @@ public class MenTurtle : MonoBehaviour
 
             TurnTo(0);
         }
-
         public void SetClamp(float clampX, float clampY)
         {
             this.clampX = clampX;
             this.clampX = clampY;
         }
-    }//clase
+}//clase
 
-
-
- 
-
-}

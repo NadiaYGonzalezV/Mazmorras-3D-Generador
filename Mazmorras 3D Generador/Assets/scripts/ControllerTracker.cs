@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class ControllerTracker : MonoBehaviour
 {
     [SerializeField] int maxX = 4;
@@ -32,7 +34,7 @@ public class ControllerTracker : MonoBehaviour
         };
 
         turtle = new MenTurtle();
-        turtle.SetClam(maxX, maxY);
+        turtle.SetClamp(maxX, maxY);
         turtle.forwardDelegate = (pos, lastPos, turn, invTurn) =>
         {
             maze.Add(pos, lastPos, turn, invTurn);
@@ -72,7 +74,7 @@ public class ControllerTracker : MonoBehaviour
             int neighbor = maze.GetNeighborsAt(turtle.Pos);
             if (neighbor < 15)
             {
-                GotoNeighbor(neighbor);
+                GoToNeighbor(neighbor);
             }
             if (neighbor == 15 && stack.Count == lastStackCount){
                 lastStackCount = 0;
@@ -81,7 +83,7 @@ public class ControllerTracker : MonoBehaviour
             if (neighbor == 15 && stack.Count > 0)
             {
                 turtle.TurnTo(stack.Pop());
-                turtle.Backward();
+                turtle.Backwadr();
             }
 
         }
@@ -93,7 +95,32 @@ public class ControllerTracker : MonoBehaviour
 
     void GoToNeighbor(int neighbor)
     {
+        //hallas vecionos disponibles y escoger uno
+        int[] ns = { 0, 0, 0, 0 };
+        int count = 0;
+        for (int i = 0; i < 4; i++)
+        {
+          if(((neighbor >> i) & 0x03) == 0)
+            {
+                ns[count] = i;
+                count++;
+            }
+        }
+        int turn = ns[Random.Range(0,count)];
+        stack.Push(turn);
+        lastStackCount = stack.Count;
+        turtle.TurnTo(turn);
+        turtle.Forward();
+    }
 
+    void GoalPath()
+    {
+        while (stack.Count > 1)
+        {
+            turtle.TurnTo(stack.Pop());
+            turtle.Backwadr();
+            maze.AddColor(turtle.Pos, 4);
+        }
     }
 
     // Update is called once per frame
