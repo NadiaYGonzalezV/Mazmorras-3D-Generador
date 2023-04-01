@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileMap16 : MonoBehaviour
 {
-    //en este scrips pueden ir los nemigos, los objetos , el tamaño, etc
+    //en este scrips pueden ir los enemigos, los objetos , el tamaño, etc
     Mesh mesh;
     MeshRenderer meshRenderer;
     MeshFilter meshFilter;
@@ -23,7 +23,7 @@ public class TileMap16 : MonoBehaviour
     const float TILE_SIZE = 0.0625f;
     Vector2 offset = Vector2.zero;
 
-    VoidFunc3Int[] RotateUVs = { };
+    VoidFuncVoid[] RotateUVs = { };
 
     void Awake()
     {
@@ -41,6 +41,28 @@ public class TileMap16 : MonoBehaviour
         colors.Clear();
 
         triangleCounter = 0;
+    }
+    public void UpdateMesh()
+    {
+        mesh.Clear();
+        mesh.vertices = vertices.ToArray();
+        mesh.triangles = triangles.ToArray();
+        mesh.uv = uv.ToArray();
+        mesh.colors = colors.ToArray();
+        mesh.RecalculateNormals();
+    }
+    void InitMesh()
+    {
+        mesh = new Mesh();
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshFilter = GetComponent<MeshFilter>();
+        meshFilter.mesh = mesh;
+        meshRenderer.material = material;
+
+        vertices = new List<Vector3>();
+        triangles = new List<int>();
+        uv = new List<Vector2>();
+        colors = new List<Color>();
     }
     public void AddTile (Vector3 v, int id = 0, int idColor = 0) //agrgar mas datos
     {

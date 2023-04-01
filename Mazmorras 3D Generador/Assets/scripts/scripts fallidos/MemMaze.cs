@@ -75,7 +75,7 @@ public class MemMaze
     {
         this.maxX = maxX;
         this.maxY = maxY;
-        for (int y = 0; y <maxX; y ++)
+        for (int y = 0; y <maxY; y ++)
         {
             for (int x = 0; x < maxX; x ++)
             {
@@ -100,7 +100,7 @@ public class MemMaze
        int turn, int invTurn)
     {
         CombineValueAt(pos, 1 << invTurn);
-        CombineValueAt(lastPos, 1 << invTurn);
+        CombineValueAt(lastPos, 1 << turn);
     }
     public void AddColor (Vector3 pos,int colorID)
     {
@@ -118,7 +118,7 @@ public class MemMaze
     {
         for (int y = 0; y < maxY; y++)
         {
-            for (int x = 0; x < maxX +1; x++)
+            for (int x = 0; x < maxX; x++)
             {
                 iteratorDelegate(x, y, maze[(x, y)]);
             }

@@ -13,17 +13,17 @@ public class ControllerRandom : MonoBehaviour
 
     MenTurtle turtle; //modelo
     MemMaze maze;//modelo
-    TileMap16 tilemap; //vista
+    TileMap16 tileMap; //vista
 
     void Start()
 
     {
         Application.targetFrameRate = 30;
-        tilemap = GameObject.Find("Tilep16").GetComponent<TileMap16>();
+        tileMap = GameObject.Find("TileMap16").GetComponent<TileMap16>();
         turtle = new MenTurtle();
         turtle.SetClamp(maxX, maxY);
 
-        turtle.forwardDelegate = (Pose, lastPos, turn, invTurn) =>
+        turtle.forwardDelegate = (pos, lastPos, turn, invTurn) =>
         {
             maze.Add(pos, lastPos, turn, invTurn);
         };
@@ -31,7 +31,7 @@ public class ControllerRandom : MonoBehaviour
         maze = new MemMaze();
         maze.iteratorDelegate = (x, y, value) =>
         {
-            tilemap.AddTile(x, y, value & 0x0F), (value >> 4) & 0x0F);
+            tileMap.AddTile(x, y, value & 0x0F, (value >> 4) & 0x0F);
         };
 
         StartCoroutine("WalkCoroutine");
@@ -54,9 +54,9 @@ public class ControllerRandom : MonoBehaviour
 
     void UpdateTilemap()
     {
-        tilemap.ClearMesh();
-        maze.InterateRect();
-        tilemap.UpdateMesh();
+        tileMap.ClearMesh();
+        maze.IterateRect();
+        tileMap.UpdateMesh();
     }
 
     void Walk()

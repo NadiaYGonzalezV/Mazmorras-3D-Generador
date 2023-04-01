@@ -14,7 +14,7 @@ public class ControllerTracker : MonoBehaviour
 
     MenTurtle turtle; 
     MemMaze maze;
-    TileMap16 tilemap;
+    TileMap16 tileMap;
 
     Stack<int> stack;
     int lastStackCount = 0;
@@ -25,12 +25,12 @@ public class ControllerTracker : MonoBehaviour
     {
         Application.targetFrameRate = 30;
         stack = new Stack<int>();
-        tilemap = GameObject.Find("TileMap16").GetComponent<TileMap16>();
+        tileMap = GameObject.Find("TileMap16").GetComponent<TileMap16>();
 
         maze = new MemMaze();
         maze.iteratorDelegate = (x, y, value) =>
         {
-            tilemap.AddTile(x, y, value & 0x0F, (value >> 4) & 0x0F);
+            tileMap.AddTile(x, y, value & 0x0F, (value >> 4) & 0x0F);
         };
 
         turtle = new MenTurtle();
@@ -61,9 +61,9 @@ public class ControllerTracker : MonoBehaviour
 
     void UpdateMazeView()
     {
-        tilemap.ClearMesh();
+        tileMap.ClearMesh();
         maze.IterateRect();
-        tilemap.UpdateMesh();
+        //tileMap.UpdateMesh();
     }
 
     void Track()
@@ -100,7 +100,7 @@ public class ControllerTracker : MonoBehaviour
         int count = 0;
         for (int i = 0; i < 4; i++)
         {
-          if(((neighbor >> i) & 0x03) == 0)
+          if(((neighbor >> i) & 0x01) == 0)
             {
                 ns[count] = i;
                 count++;

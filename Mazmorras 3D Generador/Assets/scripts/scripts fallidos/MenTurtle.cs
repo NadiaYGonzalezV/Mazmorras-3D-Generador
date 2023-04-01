@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenTurtle : MonoBehaviour
+public delegate void VoidFuncVoid(); //delegados
+public delegate void VoidFuncInt(int turn);
+public delegate void VoidFunc4Param(Vector3 pos, Vector3 lastPos, int turn, int invTurn);
+
+public class MenTurtle 
 {
-    public delegate void VoidFuncVoid();
-    public delegate void VoidFuncInt(int turn);
-    public delegate void VoidFunc4Param(Vector3 pos, Vector3 lastPos, int turn, int invTurn);
    
         Vector3 pos = Vector3.zero;
         Vector3 lastPos = Vector3.zero;
@@ -30,7 +31,7 @@ public class MenTurtle : MonoBehaviour
         public Vector3 Dir { get => dirs[turn]; }
 
         public int Turn { get => turn; }
-        public int InTurn { get => invTurn; }
+        public int InvTurn { get => invTurn; }
 
         public VoidFunc4Param forwardDelegate;
         public VoidFunc4Param backwardDelegate;
@@ -97,7 +98,7 @@ public class MenTurtle : MonoBehaviour
         public void AddTurn(int newTurn)
         {
             turn += newTurn;
-            turn += 0x03;
+            turn &= 0x03;
             invTurn = (turn + 2) & 0x03;
             turnDelegate(turn);
         }
