@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1366
     height: 685
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 201
+  controlID: 96
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 239
     height: 635
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 164
+  controlID: 102
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 165
+  controlID: 103
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,13 +346,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Red Nebula Studios/RNLowPolyDungeonLite/Prefabs
+    - Assets/PreFabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Red Nebula Studios/RNLowPolyDungeonLite/Prefabs
+  - Assets/PreFabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\yolog\Documents\GitHub\Mazmorras-3D-Generador\Mazmorras
     3D Generador
@@ -360,9 +360,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 105b0000
-    m_LastClickedID: 23312
-    m_ExpandedIDs: 000000001c5900001e590000085b0000
+    m_SelectedIDs: 28690000
+    m_LastClickedID: 26920
+    m_ExpandedIDs: 00000000166900001e690000226900002a690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c590000
+    m_ExpandedIDs: 0000000016690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -442,7 +442,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 16}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -520,7 +520,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9474ffff6c8effff0299fffff4bfffff0ccbffff58faffffb4faffff0c5a0000105a0000145a0000
+      m_ExpandedIDs: 36fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -621,7 +621,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -769,9 +769,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.6944672, y: -3.2117245, z: -2.7185307}
+    m_Target: {x: 26.455742, y: 3.3735294, z: -7.746582}
     speed: 2
-    m_Value: {x: 1.6944672, y: -3.2117245, z: -2.7185307}
+    m_Value: {x: 26.455742, y: 3.3735294, z: -7.746582}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -818,17 +818,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.71366733, y: -0.025200855, z: 0.025729056, w: 0.69966197}
+    m_Target: {x: -0.31935602, y: 0.06434347, z: -0.022320954, w: -0.94537836}
     speed: 2
-    m_Value: {x: 0.71470207, y: -0.024112562, z: 0.024692947, w: 0.69857705}
+    m_Value: {x: -0.31249192, y: 0.05027701, z: -0.017148202, w: -0.948434}
   m_Size:
-    m_Target: 6.6376743
+    m_Target: 5.0886245
     speed: 2
-    m_Value: 6.6376743
+    m_Value: 5.081003
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
