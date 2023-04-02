@@ -220,6 +220,9 @@ MonoBehaviour:
   - {fileID: 1930489106968362143, guid: 6c18b8cdf6c23c64f9142a6b45698749, type: 3}
   - {fileID: 4558968003866445309, guid: 2b89c95553a530f42baf400a268e5673, type: 3}
   closedRoom: {fileID: 9086443378664590658, guid: 52d22bf136aa1e9419e177d5deba797b, type: 3}
+  rooms: []
+  boss: {fileID: 2420875610821767468, guid: 061d510fab6beb940bfa064b6ee1aaac, type: 3}
+  enemys: {fileID: 4153151549065436280, guid: 0277f0b130994de468c09349d4a163e0, type: 3}
 --- !u!4 &51685322
 Transform:
   m_ObjectHideFlags: 0

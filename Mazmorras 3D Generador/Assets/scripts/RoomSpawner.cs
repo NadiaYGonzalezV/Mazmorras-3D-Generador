@@ -55,7 +55,7 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //para que no den a la nada
     {
         if (other.CompareTag("SpawnPoint"))
         {
