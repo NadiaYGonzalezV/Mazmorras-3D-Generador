@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMove : MonoBehaviour
+{
+    
+    public float moveSpeed = 5f;
+
+    private Transform mainCameraTransform;
+
+    void Start()
+    {
+        mainCameraTransform = Camera.main.transform;
+    }
+
+    void Update()
+    {
+        // Obtener los valores de entrada del teclado para el eje horizontal y vertical
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        // Obtener la dirección de movimiento basada en la cámara del jugador
+        Vector3 forward = mainCameraTransform.forward;
+        Vector3 right = mainCameraTransform.right;
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+        Vector3 direction = forward * verticalInput + right * horizontalInput;
+
+        // Mover el personaje en la dirección calculada
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
+        // Asignar teclas personalizadas para el movimiento
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += -right * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += right * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += forward * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += -forward * moveSpeed * Time.deltaTime;
+        }
+    }
+}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RoomTemplates : MonoBehaviour
 {
     //Aqui van a estar todos los prefabs de las salas para saber donde se encuentran las salidas
@@ -18,6 +19,8 @@ public class RoomTemplates : MonoBehaviour
     //aqui podemos tener referencias a objetos de vida,mana, etc
     public GameObject boss;
     public GameObject enemys;
+
+   
 
     private void Start()
     {
