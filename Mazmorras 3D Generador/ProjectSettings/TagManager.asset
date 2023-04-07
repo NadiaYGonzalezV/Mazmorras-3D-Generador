@@ -7,11 +7,13 @@ TagManager:
   - TileMap16
   - SpawnPoint
   - Rooms
+  - EnemyS
+  - Pared
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Collider
   - Water
   - UI
   - 

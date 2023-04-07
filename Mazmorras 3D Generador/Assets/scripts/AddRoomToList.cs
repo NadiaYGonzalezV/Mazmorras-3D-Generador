@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class AddRoomToList : MonoBehaviour
 {
+    //este script es el encargado de mostrar la lista en el inspector 
 
     private RoomTemplates templates;
     

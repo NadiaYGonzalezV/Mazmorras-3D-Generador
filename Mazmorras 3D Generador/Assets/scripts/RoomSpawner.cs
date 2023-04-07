@@ -25,7 +25,7 @@ public class RoomSpawner : MonoBehaviour
     void Spawn()
     {
        if (spawned == false)
-        {
+       {
             if (openSide == 1)
             {
                 //Necesitamos puerta abajo
@@ -52,7 +52,7 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.RightRooms[rand], transform.position, templates.RightRooms[rand].transform.rotation);
             }
             spawned= true;
-        }
+       }
     }
 
     private void OnTriggerEnter(Collider other) //para que no den a la nada
