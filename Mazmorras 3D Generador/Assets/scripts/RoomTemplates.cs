@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class RoomTemplates : MonoBehaviour
@@ -11,6 +12,8 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] TopRooms;
     public GameObject[] LeftRooms;
     public GameObject[] RightRooms;
+
+    public Text roomCountText;
 
     public GameObject closedRoom;
 
@@ -25,12 +28,16 @@ public class RoomTemplates : MonoBehaviour
     private void Start()
     {
         Invoke("SpawnEnemys", 3f); // "f" segundos a esperar 
+
+        roomCountText = GameObject.Find("NumeroDeHabitaciones: ").GetComponent<Text>();
     }
 
     void SpawnEnemys()
     {
         //boss en la ultima sala
         Instantiate(boss, rooms[rooms.Count - 1].transform.position, Quaternion.identity); //menos uno por que las listas empiezan desde cero
+
+        roomCountText.text = "Número de Habitaciones: " + rooms.Count;
 
         //instanciar en cada salda enemigso 
 

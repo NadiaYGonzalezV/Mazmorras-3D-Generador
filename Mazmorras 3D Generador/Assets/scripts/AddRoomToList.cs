@@ -8,8 +8,10 @@ public class AddRoomToList : MonoBehaviour
 {
     //este script es el encargado de mostrar la lista en el inspector 
 
-    private RoomTemplates templates;
-    
+    //private RoomTemplates templates;
+
+    public RoomTemplates templates;
+
 
 
 
@@ -18,7 +20,11 @@ public class AddRoomToList : MonoBehaviour
         templates=GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         templates.rooms.Add(this.gameObject);
 
-        
+
+        templates.roomCountText.text = "Número de habitaciones: " + templates.rooms.Count;
+       
+
+
 
 
     }
