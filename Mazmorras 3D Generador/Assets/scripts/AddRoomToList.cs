@@ -21,7 +21,7 @@ public class AddRoomToList : MonoBehaviour
         templates.rooms.Add(this.gameObject);
 
 
-        templates.roomCountText.text = "Número de habitaciones: " + templates.rooms.Count;
+        templates.roomCountText.text = "Número de Habitaciones: " + templates.rooms.Count;
        
 
 

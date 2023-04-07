@@ -14,6 +14,8 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] RightRooms;
 
     public Text roomCountText;
+    public Text enemyCountText;
+    
 
     public GameObject closedRoom;
 
@@ -30,6 +32,8 @@ public class RoomTemplates : MonoBehaviour
         Invoke("SpawnEnemys", 3f); // "f" segundos a esperar 
 
         roomCountText = GameObject.Find("NumeroDeHabitaciones: ").GetComponent<Text>();
+        enemyCountText = GameObject.Find("NúmeroDeEnemigos: ").GetComponent<Text>();
+       
     }
 
     void SpawnEnemys()
@@ -39,12 +43,22 @@ public class RoomTemplates : MonoBehaviour
 
         roomCountText.text = "Número de Habitaciones: " + rooms.Count;
 
+        int enemyCount = 0;
+        
+
         //instanciar en cada salda enemigso 
 
         for (int i = 0; i < rooms.Count-1; i++) //-1 es para que no aparezca en la ultima sala 
         {
             Instantiate(enemys, rooms[i].transform.position, Quaternion.identity);
+
+            enemyCount++;
+           
         }
+
+        // Actualizar el texto del objeto Text con el número de enemigos generados
+        enemyCountText.text = "Número de Enemigos: " + enemyCount;
+       
     }
 
 
