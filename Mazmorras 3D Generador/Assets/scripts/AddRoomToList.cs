@@ -8,9 +8,9 @@ public class AddRoomToList : MonoBehaviour
 {
     //este script es el encargado de mostrar la lista en el inspector 
 
-    //private RoomTemplates templates;
+    private RoomTemplates templates;
 
-    public RoomTemplates templates;
+    //public RoomTemplates templates;
 
 
 

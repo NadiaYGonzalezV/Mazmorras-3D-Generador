@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private new Rigidbody rigidbody;
     public float moveSpeed = 5f;
-
+    
     private Transform mainCameraTransform;
     
 
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         mainCameraTransform = Camera.main.transform;
+        
     }
 
     // Update is called once per frame
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
             // Obtener los valores de entrada del teclado para el eje horizontal y vertical
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
+
+            
 
             // Obtener la dirección de movimiento basada en la cámara del jugador
             Vector3 forward = mainCameraTransform.forward;
@@ -55,10 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position += -forward * moveSpeed * Time.deltaTime;
             }
-            else
-            {
-                rigidbody.velocity = Vector3.zero;
-            }
+           
         }
 
 
